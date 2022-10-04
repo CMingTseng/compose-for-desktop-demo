@@ -1,0 +1,27 @@
+//    //https://www.slideshare.net/shengyou/overview-of-kotlin-multiplatform
+//    //https://plugins.gradle.org/plugin/org.jetbrains.compose
+buildscript {
+    ext {
+        kotlin_version = "1.6.10"
+        compose_version = "1.1.0"
+    }
+    repositories {
+        google()
+        gradlePluginPortal()
+        mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        maven {
+            url "https://maven.pkg.jetbrains.space/public/p/compose/dev"
+        }
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.compose:compose-gradle-plugin:$compose_version"
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

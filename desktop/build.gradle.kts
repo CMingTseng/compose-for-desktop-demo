@@ -10,12 +10,6 @@ plugins {
 group = "io.kraftsman.compose.desktop"
 version = "1.0-SNAPSHOT"
 
-repositories {
-    google()
-    mavenCentral()
-    maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
-}
-
 kotlin {
     jvm {
         compilations.all {
@@ -35,7 +29,7 @@ kotlin {
 
 compose.desktop {
     application {
-        mainClass = "MainKt"
+        mainClass = "io.kraftsman.compose.desktop.MainKt"
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
             packageName = "compose-for-desktop-demo"
